@@ -70,13 +70,13 @@
 
 
 // @section info
-/
+
 //  #define ENDER_3S1_PLUS
 #define ENDER_3S1_PRO
   
 // 主控芯片
-#define USER_STM32F103  1
-// #define USER_STM32F401  1
+// #define USER_STM32F103  0
+#define USER_STM32F401  1
 
 
 #if ENABLED(ENDER_3S1_PRO)
@@ -90,14 +90,14 @@
     #elif ENABLED(USER_STM32F103)
       #define SHORT_BUILD_VERSION "2.0.8.24F1" //F103版本
     #elif ENABLED(USER_STM32F401)
-      #define SHORT_BUILD_VERSION "2.0.8.24F4" // F401版本
+      #define SHORT_BUILD_VERSION "2.0.8.GEO" // F401版本
 
     #endif
     
   #endif
 
   // Author info of this build printed to the host during boot and M115
-  #define STRING_CONFIG_H_AUTHOR "Creality" // Who made the changes.
+  #define STRING_CONFIG_H_AUTHOR "Giorge" // Who made the changes.
   //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
   #define MACVERSION        STRING_CONFIG_H_AUTHOR
   #define SOFTVERSION       SHORT_BUILD_VERSION
@@ -246,7 +246,7 @@
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
   #if ENABLED(USER_STM32F103)
-    #define MOTHERBOARD BOARD_CREALITY_S1
+    #define MOTHERBOARD BOARD_CREALITY_S1_F401RC
   #elif ENABLED(USER_STM32F401)
     #define MOTHERBOARD BOARD_CREALITY_S1_F401RC//MOTHERBOARD BOARD_CREALITY_S1//BOARD_CREALITY_S1_F401RC
   #endif
@@ -1074,6 +1074,7 @@
  */
 /**
  *Z_MIN_PROBE_PIN
+*/
 
 //#define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default
 
@@ -1083,7 +1084,6 @@
  * Allen Key Probes, Servo Probes, Z-Sled Probes, FIX_MOUNTED_PROBE, etc.
  * Activate one of these to use Auto Bed Leveling below.
  */
-/**
 
 /**
  * The "Manual Probe" provides a means to do "Auto" Bed Leveling without a probe.
